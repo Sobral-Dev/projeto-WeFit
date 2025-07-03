@@ -94,6 +94,7 @@ jobs:
         with:
           node-version: '20.x'
           cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
 
       - name: Install Semantic Release CLI
         run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/exec
@@ -107,3 +108,4 @@ jobs:
             --exec "mvn -B release:prepare release:perform -DskipTests -Darguments.skipTests=true -DdryRun=\${dryRun} -DreleaseVersion=\${nextRelease.version} -DdevelopmentVersion=\${nextRelease.version}-SNAPSHOT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
