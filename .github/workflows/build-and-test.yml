@@ -104,8 +104,26 @@ jobs:
           cd backend
           semantic-release \
             --branches main \
-            --plugins "@semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/changelog,@semantic-release/npm,@semantic-release/git,@semantic-release/github,@semantic-release/exec" \
+            --plugins "[ \
+              '@semantic-release/commit-analyzer', \
+              '@semantic-release/release-notes-generator', \
+              '@semantic-release/changelog', \
+              ['@semantic-release/git', { \
+                'assets': ['CHANGELOG.md', 'pom.xml'], \
+                'message': 'chore(release): ${nextRelease.version} [skip ci]\\n\\n${nextRelease.notes}' \
+              }], \
+              ['@semantic-release/github', { \
+                'assets': [], \
+                'failComment': false, \
+                'failTitle': false \
+              }], \
+              ['@semantic-release/exec', { \
+                'prepareCmd': 'mvn -B versions:set -DnewVersion=${nextRelease.version} -DgenerateBackupPoms=false', \
+                'publishCmd': 'mvn -B deploy -DskipTests -Darguments.skipTests=true -Dskip.integration.tests=true -Dsemantic-release.force=true', \
+                'successCmd': 'mvn -B versions:set -DnewVersion=${nextRelease.version}-SNAPSHOT -DgenerateBackupPoms=false', \
+                'failCmd': 'mvn -B versions:set -DnewVersion=${nextRelease.version}-SNAPSHOT -DgenerateBackupPoms=false' \
+              }] \
+            ]" \
             --exec "mvn -B release:prepare release:perform -DskipTests -Darguments.skipTests=true -DdryRun=\${dryRun} -DreleaseVersion=\${nextRelease.version} -DdevelopmentVersion=\${nextRelease.version}-SNAPSHOT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
