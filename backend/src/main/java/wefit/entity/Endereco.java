@@ -38,9 +38,6 @@ public class Endereco {
     @NotBlank(message = "O estado não pode estar em branco")
     private String estado;
 
-    @OneToOne(mappedBy = "endereco", cascade = CascadeType.ALL)
-    private Usuario usuario;
-
     // Construtor para facilitar a criação de Endereço
     public Endereco(String cep, String logradouro, String numero, String complemento, String cidade, String bairro, String estado) {
         this.cep = cep;

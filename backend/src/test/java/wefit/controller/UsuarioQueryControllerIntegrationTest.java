@@ -16,7 +16,6 @@ import wefit.dto.EnderecoDTO;
 import wefit.dto.PessoaFisicaDTO;
 import wefit.dto.PessoaJuridicaDTO;
 import wefit.entity.PessoaFisica;
-import wefit.entity.PessoaJuridica;
 import wefit.service.PessoaFisicaCreationService;
 import wefit.service.PessoaJuridicaCreationService;
 import wefit.repository.UsuarioRepository;

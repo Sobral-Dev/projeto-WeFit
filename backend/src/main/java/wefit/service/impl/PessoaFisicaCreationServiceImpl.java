@@ -46,7 +46,6 @@ public class PessoaFisicaCreationServiceImpl implements PessoaFisicaCreationServ
         Endereco endereco = usuarioMapper.toEndereco(dto.getEndereco());
 
         pessoaFisica.setEndereco(endereco);
-        endereco.setUsuario(pessoaFisica);
 
         PessoaFisica savedPessoaFisica = pessoaFisicaRepository.save(pessoaFisica);
 

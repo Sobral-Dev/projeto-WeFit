@@ -46,7 +46,6 @@ public class PessoaJuridicaCreationServiceImpl implements PessoaJuridicaCreation
         Endereco endereco = usuarioMapper.toEndereco(dto.getEndereco());
 
         pessoaJuridica.setEndereco(endereco);
-        endereco.setUsuario(pessoaJuridica);
 
         PessoaJuridica savedPessoaJuridica = pessoaJuridicaRepository.save(pessoaJuridica);
 
