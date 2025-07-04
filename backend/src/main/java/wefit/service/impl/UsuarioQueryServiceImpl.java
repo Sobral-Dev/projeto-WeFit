@@ -8,6 +8,7 @@ import wefit.repository.PessoaFisicaRepository;
 import wefit.repository.PessoaJuridicaRepository;
 import wefit.service.UsuarioQueryService;
 import org.springframework.stereotype.Service;
+import wefit.exception.UsuarioNaoEncontradoException;
 
 import java.util.List;
 
@@ -44,6 +45,6 @@ public class UsuarioQueryServiceImpl implements UsuarioQueryService {
     @Override
     public Usuario buscarUsuarioPorId(Long id) {
         return usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com ID: " + id));
+                .orElseThrow(() -> new UsuarioNaoEncontradoException("Usuário não encontrado com ID: " + id));
     }
 }
