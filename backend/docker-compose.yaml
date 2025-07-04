@@ -20,10 +20,10 @@ services:
 
   # Serviço Apache ZooKeeper
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.0.1 # Imagem do ZooKeeper da Confluent
+    image: confluentinc/cp-zookeeper:7.0.1
     container_name: zookeeper_server
     ports:
-      - "2181:2181" # Mapeia a porta 2181 do host para a porta 2181 do container
+      - "2181:2181" 
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
