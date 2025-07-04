@@ -26,7 +26,7 @@ Este projeto é uma API de cadastro de usuários (Pessoa Física e Pessoa Juríd
 - **Mapeamento de Objetos:** MapStruct (junto ao JPA + Hibernate)
 - **Migrações de Banco de Dados:** Flyway
 - **Testes:** JUnit 5, Mockito, Spring Test (MockMvc), H2 Database
-- **Qualidade de Código:** SonarCloud
+- **Qualidade de Código:** SonarQube (Plugin SonarCloud)
 - **Automação de Release:** Semantic Release (via GitHub Actions)
 
 ## Arquitetura
@@ -53,7 +53,7 @@ As exceções de validação e de negócio são tratadas globalmente por um Glob
 ## Testes
 
 - **Testes Unitários:** Focam em unidades isoladas de código (métodos de validadores, serviços, publicadores Kafka), utilizando Mockito para simular dependências.
-- **Testes de Integração (e2e):** Validam a interação entre múltiplas camadas da aplicação (controladores, serviços, repositórios) e a persistência no banco de dados. Utilizam o Spring Test (MockMvc) e um banco de dados H2 em memória para agilidade e isolamento.
+- **Testes de Integração:** Validam a interação entre múltiplas camadas da aplicação (controladores, serviços, repositórios) e a persistência no banco de dados. Utilizam o Spring Test (MockMvc) e um banco de dados H2 em memória para agilidade e isolamento.
 
 ## Microsserviços e Infraestrutura
 
