@@ -1,6 +1,8 @@
 # Projeto - Serviço de Cadastro
 
+<p align="center">
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Sobral-Dev_projeto-WeFit)](https://sonarcloud.io/summary/new_code?id=Sobral-Dev_projeto-WeFit)
+</p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/Backend%20Language-Java%2017-orange?style=for-the-badge&logo=java" alt="Java 17">
