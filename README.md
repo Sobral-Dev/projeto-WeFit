@@ -95,4 +95,4 @@ A API estará disponível em `http://localhost:8080`.
 
 ## Documentação dos Endpoints
 
-[Acesse Aqui](#)
+[Acesse Aqui](https://github.com/Sobral-Dev/projeto-WeFit/blob/main/docs/Documenta%C3%A7%C3%A3o%20dos%20Endpoints.md)
