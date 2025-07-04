@@ -9,8 +9,8 @@ import wefit.kafka.KafkaEventPublisher;
 import wefit.mapper.UsuarioMapper;
 import wefit.repository.PessoaJuridicaRepository;
 import wefit.repository.UsuarioRepository;
-import wefit.service.EnderecoService;
 import wefit.service.PessoaJuridicaCreationService;
+import wefit.config.AppConstants;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,18 +19,15 @@ public class PessoaJuridicaCreationServiceImpl implements PessoaJuridicaCreation
 
     private final PessoaJuridicaRepository pessoaJuridicaRepository;
     private final UsuarioRepository usuarioRepository;
-    private final EnderecoService enderecoService;
     private final KafkaEventPublisher kafkaEventPublisher;
     private final UsuarioMapper usuarioMapper;
 
     public PessoaJuridicaCreationServiceImpl(PessoaJuridicaRepository pessoaJuridicaRepository,
                                              UsuarioRepository usuarioRepository,
-                                             EnderecoService enderecoService,
                                              KafkaEventPublisher kafkaEventPublisher,
                                              UsuarioMapper usuarioMapper) {
         this.pessoaJuridicaRepository = pessoaJuridicaRepository;
         this.usuarioRepository = usuarioRepository;
-        this.enderecoService = enderecoService;
         this.kafkaEventPublisher = kafkaEventPublisher;
         this.usuarioMapper = usuarioMapper;
     }
@@ -60,7 +57,7 @@ public class PessoaJuridicaCreationServiceImpl implements PessoaJuridicaCreation
                 savedPessoaJuridica.getEmail(),
                 savedPessoaJuridica.getCnpj()
         );
-        kafkaEventPublisher.publish("usuario.cadastrado", eventDTO);
+        kafkaEventPublisher.publish(AppConstants.TOPIC_USUARIO_CADASTRADO, eventDTO);
 
         return savedPessoaJuridica;
     }

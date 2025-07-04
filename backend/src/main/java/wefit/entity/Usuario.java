@@ -41,8 +41,7 @@ public abstract class Usuario {
     @JsonIgnore
     private Endereco endereco;
 
-    // Construtor para campos comuns
-    public Usuario(String nome, String celular, String telefone, String email) {
+    protected Usuario(String nome, String celular, String telefone, String email) {
         this.nome = nome;
         this.celular = celular;
         this.telefone = telefone;

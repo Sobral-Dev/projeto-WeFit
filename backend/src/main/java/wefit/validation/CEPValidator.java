@@ -11,6 +11,7 @@ public class CEPValidator implements ConstraintValidator<CEP, String> {
 
     @Override
     public void initialize(CEP constraintAnnotation) {
+        // No initialization needed for this validator.
     }
 
     @Override
@@ -19,7 +20,7 @@ public class CEPValidator implements ConstraintValidator<CEP, String> {
             return true;
         }
 
-        String cepLimpo = cep.replaceAll("[^0-9]", "");
+        String cepLimpo = cep.replaceAll("\\D", "");
 
         if (cepLimpo.length() != 8) {
             log.error("CEP inválido: O CEP deve conter 8 dígitos numéricos. CEP fornecido: {}", cep);

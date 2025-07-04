@@ -11,6 +11,7 @@ public class CPFValidator implements ConstraintValidator<CPF, String> {
 
     @Override
     public void initialize(CPF constraintAnnotation) {
+        // No initialization needed for this validator.
     }
 
     @Override
@@ -19,14 +20,13 @@ public class CPFValidator implements ConstraintValidator<CPF, String> {
             return true;
         }
 
-        String cpfLimpo = cpf.replaceAll("[^0-9]", "");
+        String cpfLimpo = cpf.replaceAll("\\D", "");
 
         if (cpfLimpo.length() != 11) {
             log.error("CPF inválido: O CPF deve conter 11 dígitos numéricos. CPF fornecido: {}", cpf);
             return false;
         }
 
-        // Aplica o algoritmo de validação de CPF (lógica dos dígitos verificadores / os dois últimos dígitos)
         int soma = 0;
         for (int i = 0; i < 9; i++) {
             soma += Character.getNumericValue(cpfLimpo.charAt(i)) * (10 - i);

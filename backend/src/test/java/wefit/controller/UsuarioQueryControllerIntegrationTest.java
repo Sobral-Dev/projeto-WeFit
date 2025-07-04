@@ -53,7 +53,6 @@ class UsuarioQueryControllerIntegrationTest {
     private UsuarioRepository usuarioRepository;
 
     private PessoaFisica pessoaFisicaSalva;
-    private PessoaJuridica pessoaJuridicaSalva;
 
     @BeforeEach
     void setUp() {
@@ -69,7 +68,7 @@ class UsuarioQueryControllerIntegrationTest {
                 "22222222", "Rua PJ", "2", null, "Cidade PJ", "Bairro PJ", "PJ");
         PessoaJuridicaDTO dtoPJ = PessoaJuridicaTestDataFactory.createValidPessoaJuridicaDTO(
                 "PJ Teste", "pj.teste@example.com", "88508547000143", "71674004087", "22222222222", enderecoPJ);
-        pessoaJuridicaSalva = pessoaJuridicaCreationService.cadastrarPessoaJuridica(dtoPJ);
+        pessoaJuridicaCreationService.cadastrarPessoaJuridica(dtoPJ);
     }
 
     @Test
@@ -112,8 +111,8 @@ class UsuarioQueryControllerIntegrationTest {
     void buscarUsuarioPorId_nonExistingId_returnsNotFound() throws Exception {
         mockMvc.perform(get("/usuarios/{id}", 999L)
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isInternalServerError())
-                .andExpect(jsonPath("$.message", is("Ocorreu um erro inesperado. Tente novamente mais tarde.")));
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message", is("Usuário não encontrado com ID: 999")));
     }
 
     @Test
@@ -125,10 +124,10 @@ class UsuarioQueryControllerIntegrationTest {
     }
 
     @Test
-    void deletarUsuario_nonExistingId_returnsInternalServerError() throws Exception {
+    void deletarUsuario_nonExistingId_returnsNotFound() throws Exception {
         mockMvc.perform(delete("/usuarios/{id}", 999L)
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isInternalServerError())
-                .andExpect(content().string(containsString("Ocorreu um erro inesperado. Tente novamente mais tarde.")));
+                .andExpect(status().isNotFound())
+                .andExpect(content().string(containsString("Usuário não encontrado com ID: 999")));
     }
 }
