@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/Sobral-Dev/projeto-WeFit/compare/v1.0.0...v1.0.1) (2025-07-04)
+
+
+### Bug Fixes
+
+* Fix e2e tests and Exceptions Handler ([50d6dc2](https://github.com/Sobral-Dev/projeto-WeFit/commit/50d6dc2385a81a1905ef6b8f3daf9e7fd2bd3d2d))
+* Fix issues of architecture and maintainability ([2b70bb0](https://github.com/Sobral-Dev/projeto-WeFit/commit/2b70bb05fcf5215db1e2fb08dd55f06b903c89d8))
+
 # 1.0.0 (2025-07-03)
 
 
