@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
-    @ExceptionHandler(CepInvalidoException.class) // NOVO: Handler para CepInvalidoException
+    @ExceptionHandler(CepInvalidoException.class)
     public ResponseEntity<ErrorDTO> handleCepInvalidoException(CepInvalidoException ex) {
         ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
