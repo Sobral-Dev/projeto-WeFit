@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Sobral-Dev/projeto-WeFit/compare/v1.0.1...v1.0.2) (2025-07-04)
+
+
+### Bug Fixes
+
+* Remove Circular Dependency ([1cad7ac](https://github.com/Sobral-Dev/projeto-WeFit/commit/1cad7ac951beb1846d154bf1823322f6386f1a9c))
+
 ## [1.0.1](https://github.com/Sobral-Dev/projeto-WeFit/compare/v1.0.0...v1.0.1) (2025-07-04)
 
 
