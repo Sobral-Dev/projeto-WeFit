@@ -1,4 +1,4 @@
-# Projeto - Serviço de Cadastro
+# Projeto WeFit - Serviço de Cadastro
 
 <p align="center">
 <img src="https://img.shields.io/badge/Backend%20Language-Java%2017-orange?style=for-the-badge&logo=java" alt="Java 17">
