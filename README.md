@@ -75,7 +75,7 @@ Navegue até a pasta `backend` no terminal.
 Inicie os serviços de infraestrutura com Docker Compose:
 
 ```bash
-    docker-compose up -d
+docker-compose up -d
 ```
 Isso iniciará o PostgreSQL, Kafka e ZooKeeper.
 
