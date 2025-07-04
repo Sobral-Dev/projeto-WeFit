@@ -1,0 +1,221 @@
+type: collection.insomnia.rest/5.0
+name: WeFit - Serviço de Cadastro Endpoints
+meta:
+  id: wrk_a4e5557595344ee796741766b02ab3a2
+  created: 1751488058544
+  modified: 1751594608469
+  description: ""
+collection:
+  - url: http://localhost:8080/pessoas-juridicas
+    name: /pessoas-juridicas
+    meta:
+      id: req_2536d771d4924b2e8283de61aff34d9b
+      created: 1751488058661
+      modified: 1751499839963
+      isPrivate: false
+      description: ""
+      sortKey: -1751488058661
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "nome": "Empresa Teste LTDA",
+            "celular": "11998877665",
+            "telefone": "1155443322",
+            "email": "contato@empresateste.com",
+            "cnpj": "45191103000114",
+            "cpfResponsavel": "41757791833",
+            "endereco": {
+                "cep": "02000000",
+                "logradouro": "Avenida Principal",
+                "numero": "456",
+                "complemento": "Sala 500",
+                "cidade": "Campinas",
+                "bairro": "Industrial",
+                "estado": "SP"
+            }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/pessoas-fisicas
+    name: /pessoas-fisicas
+    meta:
+      id: req_9944402735ae4d2f9e629000d1c2d68d
+      created: 1751488192305
+      modified: 1751499551899
+      isPrivate: false
+      description: ""
+      sortKey: -1751488192305
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "nome": "João Silva",
+            "celular": "11987654321",
+            "telefone": "1132109876",
+            "email": "joao.silva@example.com",
+            "cpf": "41757791833",
+            "endereco": {
+                "cep": "01000000",
+                "logradouro": "Rua Exemplo",
+                "numero": "123",
+                "complemento": "Apto 101",
+                "cidade": "São Paulo",
+                "bairro": "Centro",
+                "estado": "SP"
+            }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios
+    name: /usuarios
+    meta:
+      id: req_1536598d00f246d79228ae73733f33d0
+      created: 1751488268650
+      modified: 1751488329098
+      isPrivate: false
+      description: ""
+      sortKey: -1751488268650
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/2
+    name: /usuarios/{id}
+    meta:
+      id: req_4377df63aa5845c19fb78e800122e79f
+      created: 1751488332949
+      modified: 1751594493137
+      isPrivate: false
+      description: ""
+      sortKey: -1751488332949
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/2
+    name: /usuarios/{id}
+    meta:
+      id: req_cb11ee1131fc4cddb74df2e751b698a8
+      created: 1751488370563
+      modified: 1751594499254
+      isPrivate: false
+      description: ""
+      sortKey: -1751488370563
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/pessoas-fisicas
+    name: /usuarios/pessoas-fisicas
+    meta:
+      id: req_5aa5764ad6a34c3e9fde9dfd7692fc5b
+      created: 1751497451900
+      modified: 1751497473535
+      isPrivate: false
+      description: ""
+      sortKey: -1751497451900
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/usuarios/pessoas-juridicas
+    name: /usuarios/pessoas-juridicas
+    meta:
+      id: req_7e928a8ece224c62a86f1841ba7009c0
+      created: 1751497476413
+      modified: 1751497502206
+      isPrivate: false
+      description: ""
+      sortKey: -1751497476413
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5e9573922b665c8e3bf9dd48c1c139f6b2c45768
+    created: 1751488058552
+    modified: 1751488126088
+  cookies:
+    - key: JSESSIONID
+      value: 02F0454F9870FB343E1FC887548CC721
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-07-02T20:28:46.088Z
+      lastAccessed: 2025-07-02T20:28:46.088Z
+      id: 49191bad-6be3-4197-bcce-9483aef2ce8f
+environments:
+  name: Base Environment
+  meta:
+    id: env_5e9573922b665c8e3bf9dd48c1c139f6b2c45768
+    created: 1751488058549
+    modified: 1751488058549
+    isPrivate: false

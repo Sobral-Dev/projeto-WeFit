@@ -95,4 +95,5 @@ A API estará disponível em `http://localhost:8080`.
 
 ## Documentação dos Endpoints
 
-[Acesse Aqui](https://github.com/Sobral-Dev/projeto-WeFit/blob/main/docs/Documenta%C3%A7%C3%A3o%20dos%20Endpoints.md)
+- [Acesse Aqui](https://github.com/Sobral-Dev/projeto-WeFit/blob/main/docs/Documenta%C3%A7%C3%A3o%20dos%20Endpoints.md)
+- [Você pode baixar também o arquivo em formato YAML Insomnia (v5) por aqui](https://github.com/Sobral-Dev/projeto-WeFit/blob/main/docs/WeFit-Endpoints(insomnia-v5).yaml)
