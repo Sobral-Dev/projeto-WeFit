@@ -1,10 +1,6 @@
 # Projeto - Serviço de Cadastro
 
 <p align="center">
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Sobral-Dev_projeto-WeFit)](https://sonarcloud.io/summary/new_code?id=Sobral-Dev_projeto-WeFit)
-</p>
-
-<p align="center">
 <img src="https://img.shields.io/badge/Backend%20Language-Java%2017-orange?style=for-the-badge&logo=java" alt="Java 17">
 <img src="https://img.shields.io/badge/Backend%20Framework-SpringBoot%203.5.3-green?style=for-the-badge&logo=spring" alt="Spring Boot 3.5.3">
 <img src="https://img.shields.io/badge/Gerenciador%20de%20Dependências-Maven-purple?style=for-the-badge&logo=apache-maven" alt="Maven">
@@ -15,11 +11,13 @@
 <img src="https://img.shields.io/badge/Qualidade%20de%20Código-SonarCloud-yellowgreen?style=for-the-badge&logo=sonarcloud" alt="SonarCloud">
 </p>
 
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Sobral-Dev_projeto-WeFit)](https://sonarcloud.io/summary/new_code?id=Sobral-Dev_projeto-WeFit)
+
 Este projeto é uma API de cadastro de usuários (Pessoa Física e Pessoa Jurídica), desenvolvido com Spring Boot, focado em boas práticas de Clean Code, princípios SOLID e arquitetura modular multicamadas. Ele foi projetado para ser expansível e se integrar futuramente a um ecossistema de microsserviços via mensageria Kafka.
 
 ## Tecnologias Utilizadas
 
-- **Linguagem:** Java SDK 17
+- **Linguagem:** Java 17
 - **Framework:** Spring Boot 3.5.3
 - **Gerenciador de Dependências:** Apache Maven
 - **Banco de Dados:** PostgreSQL
